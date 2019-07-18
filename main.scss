@@ -1,0 +1,212 @@
+$lightblue:#7de4f2c0;
+$meduimblue:#39beef;
+$darkblue: #3997ef; 
+$black: #3e4042;
+$grey: #727475;
+$lightgrey: rgba(211, 211, 211, 0.404);
+$linearcolor: linear-gradient(to right bottom,$lightblue,$darkblue);
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2%;
+}
+
+@mixin content-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    height: 100vh;
+    background-image: linear-gradient(to right bottom,$lightblue,$darkblue),
+     url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+    &__content-style {   
+        @include content-style;
+    }
+    h1  {
+    margin-top: 23rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 6rem;
+    letter-spacing: 5rem;  
+    color: white;
+    animation: MoveInLeft 1s ease-out;
+    }
+
+    h3 {
+    font-family: sans-serif;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    word-spacing: 2rem;
+    letter-spacing: 1rem;
+    animation: MoveInRight 1s ease-out;
+    }
+}
+
+.btn{
+    &__btn-style{
+        margin-top: 20px;
+        color: rgba(0, 0, 0, 0.616);
+        background-color: white;
+        border-radius: 10rem;
+        font-size: 2rem;
+        padding: 1rem 4rem;
+        animation: MoveUpButton 1s ease-out; 
+    }
+
+    &:hover{
+        transform: translateY(-0.3rem);
+        color: rgba(0, 0, 0, 0.692);
+    }
+  }
+
+//   about page
+
+.about{
+    min-height: 100vh;
+    min-width: 100%;
+    margin-top: -150px;
+    background-color: $lightgrey;
+    @include content-style;
+
+    &__heading-style{
+    text-transform: uppercase;
+    color: $darkblue;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 3rem;
+    margin-top: -22%;  
+    //margin-bottom: 5%;   
+    }  
+}
+.row{
+    &__content-style{
+        @include content-style;
+        margin-top: -75%;
+    }
+    &__heading-style{
+        margin-top: 30%;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $black;      
+        margin-bottom: 3rem;
+        font-size: 17px;
+    }
+}
+
+
+.about-img
+{
+    position: relative;
+    @include content-style;
+    margin-top: 20rem;
+
+    &__img-style1{
+      width: 250px;
+      height: 200px;
+      position: absolute;
+      right: 1rem;
+      box-shadow: 0 1.5rem 4rem   rgba($black, .7);
+
+    }
+
+    &__img-style2{
+        width: 250px;
+        height: 200px;
+        position: absolute;
+         margin-top: 3rem;
+         margin-left: 7rem;
+         box-shadow: 0 1.5rem 4rem   rgba($black, .7);
+
+    }
+
+      &__img-style3{
+        width: 250px;
+        height: 200px;
+        margin-top: 12rem;
+        margin-left: -30px;
+        position: absolute; 
+        box-shadow: 0 1.5rem 4rem   rgba($black, .7);
+         
+    }
+
+    &__img-style1:hover{
+        transition: all 0.2s;
+        transform: scale(1.1);
+        box-shadow: 0 1.5rem 4rem   rgba($black, .7);
+        z-index: 20;
+    }
+    &__img-style2:hover{
+        transition: all 0.2s;
+        transform: scale(1.1);
+        box-shadow: 0 1.5rem 4rem   rgba($black, .7);
+        z-index: 20;
+    }
+    &__img-style3:hover{
+        transition: all 0.2s;
+        transform: scale(1.1);
+        box-shadow: 0 1.5rem 4rem   rgba($black, .7);
+        z-index: 20;
+    }
+}
+
+@keyframes MoveInLeft{
+    0%{ 
+        opacity: 0;
+        transform: translateX(-10rem); 
+    }
+    80%{
+        transform: translateX(1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes MoveInRight{
+    0%{ 
+        opacity: 0;
+        transform: translateX(10rem); 
+    }
+    80%{
+        transform: translateX(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes MoveUpButton{
+    0%{ 
+        opacity: 0;
+        transform: translateY(5rem); 
+    }
+  
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
